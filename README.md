@@ -1,22 +1,22 @@
 # HomeAssistant-DMIPollen
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
 Home Assistant Custom Component showing pollen data from dmi.dk (Danmarks Meteorologiske Institut) by use of the REST response from: [https://www.dmi.dk/dmidk_byvejrWS/rest/texts/forecast/pollen/Danmark/](https://www.dmi.dk/dmidk_byvejrWS/rest/texts/forecast/pollen/Danmark/)
 
 ## Installation
 
 ### Manual Installation
-  1. Copy dmipollen folder into the custom_components folder of your home assistant configuration directory.
+  1. Copy `dmipollen` folder into the custom_components folder of your home assistant configuration directory.
   2. Restart Home Assistant.
   3. Configure the `dmipollen` sensor in configuration.yaml as explained futher down.
   4. Restart Home Assistant.
 
 ### Installation via HACS (Home Assistant Community Store)
   1. Ensure that [HACS](https://hacs.xyz/) is installed.
-  2. Search for and install the `dmipollen` integration.
-  3. Confiure the `dmipollen` sensor.
+  2. Open HACS and add `https://github.com/ChristofferG/homeassistant-dmipollen` as a Custom repository.
+  3. Click DMI Pollen and click "Install this repository in HACS".
   4. Restart Home Assistant.
-
+  5. Configure the `dmipollen` sensor in configuration.yaml as explained futher down.
+  6. Restart Home Assistant.
 
 ## Configuration
 
