@@ -1,5 +1,6 @@
 # HomeAssistant-DMIPollen
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
+
 Home Assistant Custom Component showing pollen data from dmi.dk (Danmarks Meteorologiske Institut) by use of the REST response from: [https://www.dmi.dk/dmidk_byvejrWS/rest/texts/forecast/pollen/Danmark/](https://www.dmi.dk/dmidk_byvejrWS/rest/texts/forecast/pollen/Danmark/)
 
 ## Installation
@@ -13,7 +14,7 @@ Home Assistant Custom Component showing pollen data from dmi.dk (Danmarks Meteor
 ### Installation via HACS (Home Assistant Community Store)
   1. Ensure that [HACS](https://hacs.xyz/) is installed.
   2. Search for and install the `dmipollen` integration.
-  3. Confiure the `eloverblik` sensor.
+  3. Confiure the `dmipollen` sensor.
   4. Restart Home Assistant.
 
 
@@ -74,4 +75,4 @@ Each sensor will have the attributes `last_update` timestamp and `attribution` w
 
 ## Future
 ---
-As dmi.dk is working on providing free data the source of the pollen data will properly change during the next years.[https://confluence.govcloud.dk/display/FDAPI](https://confluence.govcloud.dk/display/FDAPI)
+As dmi.dk is working on providing free data the source of the pollen data will properly change during the next years. See [https://confluence.govcloud.dk/display/FDAPI](https://confluence.govcloud.dk/display/FDAPI)
