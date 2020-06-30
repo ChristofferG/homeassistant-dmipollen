@@ -1,0 +1,6 @@
+{
+    "name": "DMI Pollen",
+    "domains": ["sensor"],
+    "iot_class": "Cloud Polling",
+    "homeassistant": "0.111.0"
+}

@@ -1,0 +1,8 @@
+{
+  "domain": "dmipollen",
+  "name": "DMI Pollen",
+  "documentation": "https://github.com/christofferg/homeassistant-dmipollen",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": ["@christofferg"]
+}
