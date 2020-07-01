@@ -20,7 +20,7 @@ Home Assistant Custom Component showing pollen data from dmi.dk (Danmarks Meteor
 
 ## Configuration
 
-`dmipollen` can only be configured via configuration.yaml
+`dmipollen` can for now only be configured via configuration.yaml. Working on a Config flow.
 
 ```yaml
 # Example configuration.yaml entry
@@ -62,17 +62,20 @@ sensor:
 |`hassel` | Yes | Return state of `hassel`
 |`alternaria` | Yes | Return state of `alternaria` (Meassueremnt only available from København)
 |`cladosporium` | Yes | Return state of `cladosporium` (Meassuremnet only available from København)
-|`forecast` | Yes | Return tomorrows pollenforecast as a danish text string
+|`forecast` | Yes | Return tomorrows pollen forecast as a danish text string. E.g 'For i morgen, onsdag d. 1. juli 2020, ventes et moderat antal græspollen (mellem 10-50)'
 |`polleninfo` | Yes | Return information string about the pollen is meassured
 |`lastupdate` | Yes | Return the last update timestamp as a string in the format: 'tirsdag den 30. juni 2020'
 
 ## States and attributes
 
-A sensor will be created with the naming syntax:
-* sensor.pollen_viborg_birk and a Friendly name: Pollen Viborg Birk
+Each selected recource will create a sensor the naming syntax:
+* E.g. `sensor.pollen_viborg_birk` and a coreponding friendly name `Pollen Viborg Birk`
+
+The unit of the pollen data is `ppcm` - Part Per Cubic Meter
 
 Each sensor will have the attributes `last_update` timestamp and `attribution` with information about where the data comes from.
 
 ## Future
----
-As dmi.dk is working on providing free data the source of the pollen data will properly change during the next years. See [https://confluence.govcloud.dk/display/FDAPI](https://confluence.govcloud.dk/display/FDAPI)
+* As dmi.dk is working on providing free data, the source of the pollen data will properly change during the next years. See [https://confluence.govcloud.dk/display/FDAPI](https://confluence.govcloud.dk/display/FDAPI)
+* Add config flow
+* Add as HACS original
