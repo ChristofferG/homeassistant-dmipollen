@@ -26,13 +26,13 @@ from datetime import datetime, timedelta
 import voluptuous as vol
 import hashlib
 
-from homeassistant.components.sensor import PLATFORM_SCHEMA
+from homeassistant.components.sensor import PLATFORM_SCHEMA, ENTITY_ID_FORMAT
 import homeassistant.helpers.config_validation as cv
 from homeassistant.const import (
         CONF_REGION, CONF_RESOURCES
     )
 from homeassistant.util import Throttle
-from homeassistant.helpers.entity import Entity
+from homeassistant.helpers.entity import Entity, generate_entity_id
 
 from urllib.request import urlopen
 import json
@@ -43,7 +43,7 @@ _LOGGER = logging.getLogger(__name__)
 MIN_TIME_BETWEEN_UPDATES = timedelta(seconds=3600) 
 
 CONCENTRATION_PARTS_PER_CUBIC_METER = "ppcm"
-SENSOR_PREFIX = 'Pollen '
+SENSOR_PREFIX = 'pollen'
 REGIONNAME1 = 'københavn'
 REGIONNAME2 = 'viborg'
 SENSOR_TYPES = {
@@ -55,9 +55,9 @@ SENSOR_TYPES = {
     'hassel': ['Hassel', 'mdi:leaf', CONCENTRATION_PARTS_PER_CUBIC_METER],
     'alternaria': ['Alternaria', 'mdi:leaf', CONCENTRATION_PARTS_PER_CUBIC_METER],
     'cladosporium': ['Cladosporium', 'mdi:leaf', CONCENTRATION_PARTS_PER_CUBIC_METER],
-    'forecast': ['Forecast', 'mdi:chart-line', ''],
+    'forecast': ['Prognose', 'mdi:chart-line', ''],
     'polleninfo': ['Polleninfo', 'mdi:information-outline', ''],
-    'lastupdate': ['Last update','mdi:update',''],
+    'lastupdate': ['Sidst opdateret','mdi:update',''],
 }
 
 ATTR_LAST_UPDATE = 'last_update'
@@ -147,7 +147,8 @@ class DMIPollenSensor(Entity):
         self.data = data
         self.type = sensor_type
         self.region = region
-        self._name = SENSOR_PREFIX + self.region.title() + " " + SENSOR_TYPES[self.type][0]
+        self._name = SENSOR_TYPES[self.type][0]
+        self.entity_id = generate_entity_id( ENTITY_ID_FORMAT, SENSOR_PREFIX +"_" + self.region + "_" + self.type, [] ) 
         self._unit_of_measurement = SENSOR_TYPES[self.type][2]
         self._icon = SENSOR_TYPES[self.type][1]
         self._attribution = None
@@ -160,7 +161,7 @@ class DMIPollenSensor(Entity):
     def name(self):
         """Return the name of the sensor."""
         return self._name
-    
+
     @property
     def icon(self):
         """Icon to use in the frontend, if any."""
