@@ -2,6 +2,9 @@
 
 Home Assistant Custom Component showing pollen data from dmi.dk (Danmarks Meteorologiske Institut) by use of the REST response from: [https://www.dmi.dk/dmidk_byvejrWS/rest/texts/forecast/pollen/Danmark/](https://www.dmi.dk/dmidk_byvejrWS/rest/texts/forecast/pollen/Danmark/)
 
+<img src="images/hapollenview.png">
+See more screenshots in the image folder
+
 ## Installation
 
 ### Manual Installation
@@ -10,9 +13,9 @@ Home Assistant Custom Component showing pollen data from dmi.dk (Danmarks Meteor
   3. Configure the `dmipollen` sensor in configuration.yaml as explained futher down.
   4. Restart Home Assistant.
 
-### Installation via HACS (Home Assistant Community Store)
+### Installation via HACS (Home Assistant Community Store) [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
   1. Ensure that [HACS](https://hacs.xyz/) is installed.
-  2. Open HACS and add `https://github.com/ChristofferG/homeassistant-dmipollen` as a Custom repository.
+  2. Open HACS and add `https://github.com/ChristofferG/homeassistant-dmipollen` as a Custom repository, and choose Integration.
   3. Click DMI Pollen and click "Install this repository in HACS".
   4. Restart Home Assistant.
   5. Configure the `dmipollen` sensor in configuration.yaml as explained futher down.
@@ -60,10 +63,10 @@ sensor:
 |`elm` | Yes | Return state of `elm`
 |`græs` | Yes | Return state of `græs`
 |`hassel` | Yes | Return state of `hassel`
-|`alternaria` | Yes | Return state of `alternaria` (Meassueremnt only available from København)
-|`cladosporium` | Yes | Return state of `cladosporium` (Meassuremnet only available from København)
+|`alternaria` | Yes | Return state of `alternaria` (Measurement only available from København)
+|`cladosporium` | Yes | Return state of `cladosporium` (Measurement only available from København)
 |`forecast` | Yes | Return tomorrows pollen forecast as a danish text string. E.g 'For i morgen, onsdag d. 1. juli 2020, ventes et moderat antal græspollen (mellem 10-50)'
-|`polleninfo` | Yes | Return information string about the pollen is meassured
+|`polleninfo` | Yes | Return information string about how the pollen is measured.
 |`lastupdate` | Yes | Return the last update timestamp as a string in the format: 'tirsdag den 30. juni 2020'
 
 ## States and attributes
