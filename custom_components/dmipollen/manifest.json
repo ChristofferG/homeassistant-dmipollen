@@ -2,6 +2,7 @@
   "domain": "dmipollen",
   "name": "DMI Pollen",
   "documentation": "https://github.com/christofferg/homeassistant-dmipollen",
+  "version": "2021.3.0",
   "requirements": [],
   "dependencies": [],
   "codeowners": ["@christofferg"]
