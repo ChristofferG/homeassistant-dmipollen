@@ -184,12 +184,12 @@ class DMIPollenSensor(Entity):
 
     @property
     def last_update(self):
-        """Return the copyright text from dmi."""
+        """Return last updated datet"""
         return self._last_update
 
     @property
-    def device_state_attributes(self):
-        """Return the state attributes."""
+    def extra_state_attributes(self):
+        """Return extra state attributes."""
         return{
             ATTR_LAST_UPDATE: self._last_update,
             ATTR_ATTRIBUTION: self._attribution,
