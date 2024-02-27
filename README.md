@@ -1,5 +1,8 @@
 # HomeAssistant-DMIPollen
 
+### The unofficial DMI API does not seem to be updated anymore (Last sample 2023.11.19). So this custom component is not getting any data right now. 
+Looking at pulling data from https://www.astma-allergi.dk/umbraco/Api/PollenApi/GetPollenFeed instead, but my time is limited, so if anyone have some spare time, feel free to give it a shot. 
+
 Home Assistant Custom Component showing pollen data from dmi.dk (Danmarks Meteorologiske Institut) by use of the REST response from: [https://www.dmi.dk/dmidk_byvejrWS/rest/texts/forecast/pollen/Danmark/](https://www.dmi.dk/dmidk_byvejrWS/rest/texts/forecast/pollen/Danmark/)
 
 <img src="images/hapollenview.png">
